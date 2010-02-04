@@ -21,7 +21,7 @@ class Controller < Sinatra::Base
     content_type = 'image/png'
     png = Img2Png::Png.new(:src => params[:splat].to_s.gsub!(/(http)\//, '\1://'))
     png.reformat
-    send_data png.to_blob, :type => 'image/png', :disposition => 'inline'
+    send_file png.to_blob, :type => 'image/png', :disposition => 'inline'
   end
   
 end
