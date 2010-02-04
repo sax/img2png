@@ -21,3 +21,4 @@ http://png.heroku.com/https/path/to/gif/i.png
 * about page form to submit URL
 * JPEG support
 * caching
+* add test images to dropbox, remove google links
