@@ -3,15 +3,22 @@
 Img2Png is a small Sinatra application that uses RMagick to convert images into
 the PNG format.
 
+This works with GIF and JPEG files, though at the moment only GIFs are thoroughly 
+tested. In theory any format supported by ImageMagick should work, though there 
+has been no examination of file size or bandwidth limitations when running live.
+
+
 == Usage
 
-http://png.heroku.com/ - about page
-http://png.heroku.com/http/path/to/gif/i.png
-http://png.heroku.com/https/path/to/gif/i.png
+* 'http:// png.heroku.com/' - about page
+* 'http:// png.heroku.com/http/path/to/gif/i.png'
+* 'http:// png.heroku.com/https/path/to/gif/i.png'
+
 
 == FIXME
 
 * specs crash locally on RMagick img.to_blob 
+
 
 == TODO
 
@@ -19,6 +26,32 @@ http://png.heroku.com/https/path/to/gif/i.png
 * better failover on bad url
 * Better about page
 * about page form to submit URL
-* JPEG support
+* test JPEG support
 * caching
 * add test images to dropbox, remove google links
+
+
+== License
+
+Released under the MIT license.
+http://www.opensource.org/licenses/mit-license.php
+
+Copyright (c) 2010 Eric Saxby
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.

@@ -12,8 +12,12 @@ class Controller < Sinatra::Base
     erb :index
   end
   
-  get "/*gif" do
-    redirect "/#{params[:splat]}gif/i.png"
+  get "/*.gif" do
+    redirect "/#{params[:splat]}.gif/i.png"
+  end
+
+  get "/*.jpg" do
+    redirect "/#{params[:splat]}.jpg/i.png"
   end
   
   get "/*/i.png" do
