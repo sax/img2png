@@ -8,7 +8,7 @@ require 'erb'
 require 'models/png'
 require 'exceptional'
 
-Exceptional.api_key = '8ebb510cbd6126e092625d58912121dd848e3a2e'
+# Exceptional.api_key = '8ebb510cbd6126e092625d58912121dd848e3a2e'
 
 module Exceptional
   def self.handle_sinatra(exception, uri, request, params)
