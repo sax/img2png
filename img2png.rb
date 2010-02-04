@@ -1,7 +1,12 @@
+# For deploying Sinatra app to Heroku
+require File.dirname(__FILE__) + '/vendor/gems/environment'
+Bundler.require_env
+
 require 'rubygems'
 require 'sinatra'
 require 'erb'
 require 'models/png'
+
 
 class Controller < Sinatra::Base
 
