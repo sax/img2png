@@ -1,0 +1,23 @@
+== Img2Png
+
+Img2Png is a small Sinatra application that uses RMagick to convert images into
+the PNG format.
+
+== Usage
+
+http://png.heroku.com/ - about page
+http://png.heroku.com/http/path/to/gif/i.png
+http://png.heroku.com/https/path/to/gif/i.png
+
+== FIXME
+
+* specs crash locally on RMagick img.to_blob 
+
+== TODO
+
+* add RMagick gateway tests to ensure proper install before continuing
+* better failover on bad url
+* Better about page
+* about page form to submit URL
+* JPEG support
+* caching

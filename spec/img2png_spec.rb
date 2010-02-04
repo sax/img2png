@@ -14,6 +14,11 @@ describe "Img2Png Controller" do
     last_response.body.should include("About Img2Png")
   end
   
+  it "redirects bad gif request to i.png" do
+    get '/http/www.google.com/intl/en_ALL/images/logo.gif'
+    last_response.status.should == '302'
+  end
+  
   it "responds to gif request" do
     get '/http/www.google.com/intl/en_ALL/images/logo.gif/i.png'
     last_response.should be_ok
