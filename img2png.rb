@@ -1,6 +1,6 @@
 # For deploying Sinatra app to Heroku
-require File.dirname(__FILE__) + '/vendor/gems/environment'
-Bundler.require_env
+# require File.dirname(__FILE__) + '/vendor/gems/environment' if File.exists?('vendor/gems/environment')
+# Bundler.require_env
 
 require 'rubygems'
 require 'sinatra'

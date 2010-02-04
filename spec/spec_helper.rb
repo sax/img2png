@@ -11,7 +11,7 @@ require 'spec/custom_matchers'
 set :environment, :test
 set :run, false
 set :raise_errors, true
-set :loggin, false
+set :logging, false
 
 Spec::Runner.configure do |conf|
   conf.include Rack::Test::Methods

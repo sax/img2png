@@ -19,6 +19,24 @@ module CustomMatchers
   def be_a_png
     BePng.new
   end
+
+  class BePngBin
+    def matches?(actual)
+      /^\211PNG/.match(actual) != nil
+    end
+    
+    def failure_message
+      "expected binary header to match PNG"
+    end
+    
+    def negative_failure_message
+      "expected binary header not to match PNG"
+    end
+  end
+  
+  def match_png_header
+    BePngBin.new
+  end
   
   class BeGif
     def matches?(actual)

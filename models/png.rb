@@ -5,9 +5,15 @@ module Img2Png
   class Png
     attr_accessor :image
     
-    def load(url)
+    def initialize(options = {})
+      self.load options[:src] unless options[:src].nil?
+      self
+    end
+
+    def load(src)
       # @img = File.exists?(url) ?
-      self.image = Magick::Image.read(url).first;
+      self.image = Magick::Image.read(src).first;
+      self
     end
     
     def reformat
