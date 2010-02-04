@@ -15,17 +15,17 @@ describe "Img2Png Controller" do
   end
   
   it "responds to gif request" do
-    get '/http/www.google.com/intl/en_ALL/images/logo.gif'
+    get '/http/www.google.com/intl/en_ALL/images/logo.gif/i.png'
     last_response.should be_ok
   end
 
   it "give correct content type" do
-    get '/http/www.google.com/intl/en_ALL/images/logo.gif'
+    get '/http/www.google.com/intl/en_ALL/images/logo.gif/i.png'
     last_response.content_type.should == "image/png"
   end
   
   it "converts a gif to an png" do
-    get '/http/www.google.com/intl/en_ALL/images/logo.gif'
+    get '/http/www.google.com/intl/en_ALL/images/logo.gif/i.png'
     last_response.body.should match_png_header
   end
   
