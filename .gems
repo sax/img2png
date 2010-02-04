@@ -1,2 +1,2 @@
 sinatra
-rmagick
+RMagick --version '2.12.2'

@@ -1,4 +1,4 @@
-require 'rmagick'
+require 'RMagick'
 module CustomMatchers
   class BePng
     def matches?(actual)
