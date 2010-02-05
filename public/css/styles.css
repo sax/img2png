@@ -1,0 +1,18 @@
+* { padding:0px;margin:0px;border:0;font-size:100%;color:#eee;}
+table {border-collapse:collapse;border-spacing:0;}
+ol,ul {list-style:none;}
+
+body { padding:21px;background:#9FACD3; font-size:14px;line-height:21px;font-family:Georgia;}
+p, div, ul, ol { margin-bottom:21px;}
+h1 {font-size:26px;line-height:42px;margin-bottom:21px;}
+h2 {font-size:21px;line-height:21px;margin-bottom:21px;}
+h3 {font-size:16px;line-height:21px;}
+.left {float:left;margin:0 21px 21px 0;}
+.right {float:right;margin:0 0 21px 21px;}
+.callout {border:1px solid #ddd;padding:9px 10px 10px;margin-bottom:21px;}
+.callout :last-child {margin-bottom:0;}
+
+body > div { padding:21px;margin:0;background:#FFFFFF;border:1px solid #aaa;}
+h2 { font-family:Georgia;}
+a { color:#000;text-decoration:none;}
+a:hover { text-decoration:underline;}
