@@ -6,7 +6,7 @@ require 'models/png'
 
 class Controller < Sinatra::Base
 
-  mime 'png', 'image/png'
+  mime :png, 'image/png'
 
   get "/" do
     erb :index

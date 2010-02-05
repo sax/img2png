@@ -57,4 +57,24 @@ module CustomMatchers
   def be_a_gif
     BeGif.new
   end
+  
+  class BeJpeg
+    def matches?(actual)
+      @actual = actual
+      @actual.class == Magick::Image
+      @actual.format == "JPEG"
+    end
+    
+    def failure_message
+      "expected a JPEG but got #{@actual.format}"
+    end
+    
+    def negative_failure_message
+      "expected something other than a JPEG"
+    end
+  end
+  
+  def be_a_jpeg
+    BeJpeg.new
+  end
 end
