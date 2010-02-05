@@ -15,21 +15,9 @@ has been no examination of file size or bandwidth limitations when running live.
 * 'http:// png.heroku.com/https/path/to/gif/i.png'
 
 
-== FIXME
-
-* specs crash locally on RMagick img.to_blob 
-
-
 == TODO
 
-* add RMagick gateway tests to ensure proper install before continuing
-* better failover on bad url
-* Better about page
-* about page form to submit URL
-* test JPEG support
-* caching
-* add test images to dropbox, remove google links
-
+http://img2png.lighthouseapp.com/projects/45989-img2png/tickets
 
 == License
 
