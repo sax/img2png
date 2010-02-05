@@ -23,6 +23,34 @@
     <div class='callout'>
       http://png.heroku.com/http/www.google.com/intl/en_ALL/images/logo.gif/i.png
     </div>
+    <p>
+      Link directly to the source image and the server responds with a 302 message to 
+      redirect to the proper URL. This should be ok for viewing in the browser, but if 
+      you want to link directly to an image you should probably follow the above usage.
+    </p>
+    <div class='callout'>
+      http://png.heroku.com/http/www.google.com/intl/en_ALL/images/logo.gif
+    </div>
+    <h2>Limitations</h2>
+    <p>
+      Img2Png does not do any caching, and does not save any images. All it does is
+      download the source into memory and convert it to the new format. It runs on a
+      single Heroku dyno using Ruby and Sinatra, with no built-in concurrency. Large source images
+      may fail based on memory limitations or based on the server's ImageMagick
+      installation.
+    </p>
+    <p>
+      Just throwing that out there.
+    </p>
+    <h2>Source, Issue tracking</h2>
+    <p>
+      Img2Png is open source software hosted on Github.com. Any issues or problems
+      can be submitted there or on the Lighthouse page for the project. 
+    </p>
+    <div class='callout'>
+      <a href='http://github.com/sax/img2png'>http://github.com/sax/img2png</a><br/>
+      <a href='http://img2png.lighthouseapp.com/projects/45989-img2png/tickets'>http://img2png.lighthouseapp.com/projects/45989-img2png/tickets</a>
+    </div>
   </div>
 </body>
 </html>

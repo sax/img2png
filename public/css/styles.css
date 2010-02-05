@@ -2,18 +2,17 @@
 table {border-collapse:collapse;border-spacing:0;}
 ol,ul {list-style:none;}
 
-body { padding:21px;background:#5E0502; font-size:14px;line-height:21px;font-family:Georgia;}
+body { padding:21px;background-color:#C0C0C0; font-size:14px;line-height:21px;font-family:Georgia;background-image:-webkit-gradient(linear, 0% 0%, 0% 90%, from(#C0C0C0), to(#E1E1E1));}
 p, div, ul, ol { margin-bottom:21px;}
-h1,h2,h3 {color:#5E0502;}
+h1,h2,h3 {color:#5E0502;font-family:"Lucida Grande";}
 h1 {font-size:26px;line-height:42px;margin-bottom:21px;}
 h2 {font-size:21px;line-height:21px;margin-bottom:21px;}
 h3 {font-size:16px;line-height:21px;}
 .left {float:left;margin:0 21px 21px 0;}
 .right {float:right;margin:0 0 21px 21px;}
-.callout {border:1px solid #ddd;padding:9px 10px 10px;margin-bottom:21px;}
+.callout {border:1px solid #aaa;padding:9px 18px 10px;margin-bottom:21px;box-shadow:0px 0px 2px #ddd;-webkit-box-shadow:0px 0px 2px #ddd;-moz-box-shadow:0px 0px 2px #ddd;}
 .callout :last-child {margin-bottom:0;}
 
-body > div { padding:42px 21px;margin:0;background:#FFFFFF;border:1px solid #aaa;-webkit-border-top-right-radius:8px;-moz-border-radius-topright:8px;-webkit-border-bottom-left-radius:8px;-moz-border-radius-bottomleft:8px;}
-h2 { font-family:Georgia;}
+body > div { max-width:55em;padding:42px 21px;margin:0;background:#FFFFFF;-webkit-border-top-right-radius:18px;-moz-border-radius-topright:18px;-webkit-border-bottom-left-radius:18px;-moz-border-radius-bottomleft:18px;box-shadow:0px 0px 3px #aaa;-webkit-box-shadow:0px 0px 3px #aaa;-moz-box-shadow:0px 0px 3px #aaa;}
 a { color:#000;text-decoration:none;}
 a:hover { text-decoration:underline;}
