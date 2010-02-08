@@ -25,7 +25,17 @@ describe "Img2Png Controller" do
   end
   
   it "responds 404 to bad image" do
-    get 'http://xyz.nothing.nowhere.com/xxx/test.gif/i.png'
+    get '/http://xyz.nothing.nowhere.com/xxx/test.gif/i.png'
+    last_response.status.should == 404
+  end
+  
+  it "responds 404 to .com html page" do
+    get '/http/www.google.com/i.png'
+    last_response.status.should == 404
+  end
+  
+  it "responds 404 to html page" do
+    get '/http/www.google.com/index.html/i.png'
     last_response.status.should == 404
   end
   

@@ -12,6 +12,7 @@ module Img2Png
 
     def load(src)
       begin
+        raise ArgumentError if src =~ /(\.html?|\.com\/?$|\.edu\/?$|\.gov\/?$|\.net\/?$)/
         self.image = Magick::Image.read(src).first;
         self
       rescue
