@@ -16,12 +16,12 @@ describe "Img2Png Controller" do
   
   it "redirects gif request to i.png" do
     get '/http/www.google.com/intl/en_ALL/images/logo.gif'
-    last_response.status.should == '302'
+    last_response.status.should == 302
   end
   
   it "redirects jpg request to i.png" do
     get '/http/www.dpreview.com/Learn/Articles/GlossaryOptical/images/123di_perspec_wide_far.png'
-    last_response.status.should == '302'
+    last_response.status.should == 302
   end
   
   it "responds to gif request" do

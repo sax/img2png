@@ -12,20 +12,17 @@ class Controller < Sinatra::Base
     erb :index
   end
   
-  get "/*.gif" do
-    redirect "/#{params[:splat]}.gif/i.png"
-  end
-
-  get "/*.jpg" do
-    redirect "/#{params[:splat]}.jpg/i.png"
-  end
-  
   get "/*/i.png" do
     content_type 'image/png'
     png = Img2Png::Png.new(:src => params[:splat].to_s.gsub!(/(https?)\//, '\1://'))
     png.reformat
     png.to_blob
+    ## TODO : send file doesn't pass tests
     # send_file png.to_blob, :type => 'image/png', :disposition => 'inline'
   end
   
+  get "/*" do
+    redirect "/#{params[:splat]}/i.png"
+  end
+
 end
