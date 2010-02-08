@@ -14,14 +14,19 @@ describe "Img2Png Controller" do
     last_response.body.should include("About Img2Png")
   end
   
-  it "redirects gif request to i.png" do
+  it "redirects direct gif request" do
     get '/http/www.google.com/intl/en_ALL/images/logo.gif'
     last_response.status.should == 302
   end
   
-  it "redirects jpg request to i.png" do
+  it "redirects direct jpg request" do
     get '/http/www.dpreview.com/Learn/Articles/GlossaryOptical/images/123di_perspec_wide_far.png'
     last_response.status.should == 302
+  end
+  
+  it "responds 404 to bad image" do
+    get 'http://xyz.nothing.nowhere.com/xxx/test.gif/i.png'
+    last_response.status.should == 404
   end
   
   it "responds to gif request" do

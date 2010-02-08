@@ -14,8 +14,12 @@ describe "PNG converter" do
     before(:each) do
       @png = Img2Png::Png.new
     end
+    
+    it "should returns nil on loading bad URL" do
+      @png.load("http://xyz.nothing.nowhere.com/xxx/test.gif").should be_nil
+    end
 
-    it "raises exception if no image" do
+    it "raises exception on reformat if no image" do
       lambda {@png.reformat}.should raise_exception(LoadError)
     end
 

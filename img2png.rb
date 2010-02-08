@@ -15,6 +15,7 @@ class Controller < Sinatra::Base
   get "/*/i.png" do
     content_type 'image/png'
     png = Img2Png::Png.new(:src => params[:splat].to_s.gsub!(/(https?)\//, '\1://'))
+    halt 404 if png.image.nil?
     png.reformat
     png.to_blob
     ## TODO : send file doesn't pass tests

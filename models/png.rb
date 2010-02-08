@@ -11,9 +11,12 @@ module Img2Png
     end
 
     def load(src)
-      # @img = File.exists?(url) ?
-      self.image = Magick::Image.read(src).first;
-      self
+      begin
+        self.image = Magick::Image.read(src).first;
+        self
+      rescue
+        nil
+      end
     end
     
     def reformat
