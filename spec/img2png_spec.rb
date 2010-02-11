@@ -38,52 +38,92 @@ describe "Img2Png Controller" do
 
   describe 'GIF' do
     before(:each) do
-      @url = '/http/dl.dropbox.com/u/4306917/img2png/test.gif'
+      @url = 'dl.dropbox.com/u/4306917/img2png/test.gif'
     end
 
-    it "redirects direct gif request" do
-      get @url
+    it "redirects direct gif request, /http/" do
+      get "/http/#{@url}"
       last_response.status.should == 302
     end
 
-    it "responds to gif request" do
-      get "#{@url}/i.png"
+    it "responds to a gif request, /http/" do
+      get "/http/#{@url}/i.png"
       last_response.should be_ok
     end
 
-    it "give correct content type converting gif" do
-      get "#{@url}/i.png"
+    it "gives correct content type converting gif, /http/" do
+      get "/http/#{@url}/i.png"
       last_response.content_type.should == "image/png"
     end
 
-    it "converts a gif to a png" do
-      get "#{@url}/i.png"
+    it "converts a gif to a png, /http/" do
+      get "/http/#{@url}/i.png"
+      last_response.body.should match_png_header
+    end
+    
+    it "redirects direct gif request, /http://" do
+      get "/http://#{@url}"
+      last_response.status.should == 302
+    end
+
+    it "responds to a gif request, /http://" do
+      get "/http://#{@url}/i.png"
+      last_response.should be_ok
+    end
+
+    it "gives correct content type converting gif, /http://" do
+      get "/http://#{@url}/i.png"
+      last_response.content_type.should == "image/png"
+    end
+
+    it "converts a gif to a png, /http://" do
+      get "/http://#{@url}/i.png"
       last_response.body.should match_png_header
     end
   end
 
   describe "JPG" do
     before(:each) do
-      @url = '/http/dl.dropbox.com/u/4306917/img2png/test.jpg'
+      @url = 'dl.dropbox.com/u/4306917/img2png/test.jpg'
     end
 
-    it "redirects direct jpg request" do
-      get @url
+    it "redirects direct jpg request, /http/" do
+      get "/http/#{@url}"
       last_response.status.should == 302
     end
 
-    it "responds to a jpeg request" do
-      get "#{@url}/i.png"
+    it "responds to a jpeg request, /http/" do
+      get "/http/#{@url}/i.png"
       last_response.should be_ok
     end
 
-    it "gives correct content type converting jpg" do
-      get "#{@url}/i.png"
+    it "gives correct content type converting jpg, /http/" do
+      get "/http/#{@url}/i.png"
       last_response.content_type.should == "image/png"
     end
 
-    it "converts a jpeg to a png" do
-      get "#{@url}/i.png"
+    it "converts a jpeg to a png, /http/" do
+      get "/http/#{@url}/i.png"
+      last_response.body.should match_png_header
+    end
+    
+    it "redirects direct jpg request, /http://" do
+      get "/http://#{@url}"
+      last_response.status.should == 302
+    end
+
+    it "responds to a jpeg request, /http://" do
+      get "/http://#{@url}/i.png"
+      last_response.should be_ok
+    end
+
+    it "gives correct content type converting jpg, /http://" do
+      get "/http://#{@url}/i.png"
+      last_response.content_type.should == "image/png"
+    end
+
+    it "converts a jpeg to a png, /http://" do
+      get "/http://#{@url}/i.png"
       last_response.body.should match_png_header
     end
   end

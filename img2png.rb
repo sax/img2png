@@ -8,34 +8,29 @@ class Controller < Sinatra::Base
 
   mime :png, 'image/png'
 
-  get "/\?i=*" do
-    redirect "/#{params[:splat].to_s.gsub!(/(https?):\/\//,'\1/')}/i.png"
-  end
-
   get "/" do
-    erb :index
-  end
-  
-  get "/*/i.png" do
-    content_type 'image/png'
-    png = Img2Png::Png.new(:src => params[:splat].to_s.gsub!(/(https?)\//, '\1://'))
-    halt 404 if png.image.nil?
-    png.reformat
-    png.to_blob
-    ## TODO : send file doesn't pass tests
-    # send_file png.to_blob, :type => 'image/png', :disposition => 'inline'
+    unless params['i'].nil?
+      redirect "/#{params[:i].to_s.gsub!(/(https?):\/\//,'\1/')}/i.png"
+    else
+      erb :index
+    end
   end
   
   get %r{/(.+)/i.png} do
     content_type 'image/png'
-    png = Img2Png::Png.new(:src => params[:captures].to_s.gsub!(/(https?)\//, '\1://'))
+    png = Img2Png::Png.new(:src => params[:captures].to_s.format_for_png)
     halt 404 if png.image.nil?
     png.reformat
     png.to_blob
   end
   
-  get "/*" do
-    redirect "/#{params[:splat]}/i.png"
+  get %r{/(.+)} do
+    redirect "/#{params[:captures].to_s.format_for_png}/i.png"
   end
+end
 
+class String
+  def format_for_png
+    self.gsub(/(https?)\//, '\1://').gsub(/(https?):\/[^\/]/, '\1://')
+  end
 end

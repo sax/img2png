@@ -18,9 +18,9 @@
     <h2>Usage</h2>
     <p>
       Apply the url of the source image as a string at the end of the current url. 
-      The HTTP scheme should be changed to another "/" delineated attribute.
     </p>
     <div class='callout'>
+      http://png.heroku.com/http://www.google.com/intl/en_ALL/images/logo.gif/i.png<br/>
       http://png.heroku.com/http/www.google.com/intl/en_ALL/images/logo.gif/i.png
     </div>
     <p>
@@ -29,8 +29,16 @@
       you want to link directly to an image you should probably follow the above usage.
     </p>
     <div class='callout'>
+      http://png.heroku.com/http://www.google.com/intl/en_ALL/images/logo.gif
       http://png.heroku.com/http/www.google.com/intl/en_ALL/images/logo.gif
     </div>
+    <p>
+      Or you can paste in a URL to an image here:
+      <form method='get'>
+        <input type='text' name='i' />
+        <input type='submit' value='convert'>
+      </form>
+    </p>
     <h2>Limitations</h2>
     <p>
       Img2Png does not do any caching, and does not save any images. All it does is

@@ -16,3 +16,5 @@ h3 {font-size:16px;line-height:21px;}
 body > div { max-width:55em;padding:42px 21px;margin:0;background:#FFFFFF;-webkit-border-top-right-radius:18px;-moz-border-radius-topright:18px;-webkit-border-bottom-left-radius:18px;-moz-border-radius-bottomleft:18px;box-shadow:0px 0px 3px #aaa;-webkit-box-shadow:0px 0px 3px #aaa;-moz-box-shadow:0px 0px 3px #aaa;}
 a { color:#000;text-decoration:none;}
 a:hover { text-decoration:underline;}
+
+input { border:1px solid black;width:100%;}
