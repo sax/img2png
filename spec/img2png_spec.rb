@@ -30,6 +30,11 @@ describe "Img2Png Controller" do
       last_response.status.should == 404
     end
   end
+  
+  it "should redirect /?i= requests" do
+    get '/?i=http://dl.dropbox.com/u/4306917/img2png/test.gif'
+    last_response.status.should == 302
+  end
 
   describe 'GIF' do
     before(:each) do
