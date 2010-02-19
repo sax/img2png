@@ -2,7 +2,6 @@ require File.dirname(__FILE__) + "/spec_helper"
 require File.dirname(__FILE__) + "/../models/png"
 
 describe "PNG converter" do
-  # include Rack::Test::Methods
   describe "initialization" do
     it "should handle PNG files" do
       Magick.formats.keys.should include("PNG")

@@ -2,8 +2,6 @@ require File.dirname(__FILE__) + "/spec_helper"
 require File.dirname(__FILE__) + "/../img2png"
 
 describe "Img2Png Controller" do
-  include Rack::Test::Methods
-
   def app
     @app ||= Controller
   end
